@@ -3,6 +3,7 @@ module.exports = {
     //this.when_account_number_equal_123456789_should_be_return_balance_5000();
     this.when_sender_balance_is_5000_transfer_amount_2000_should_be_success();
     this.when_receiver_balance_is_2_receive_amount_2000_should_be_success();
+    this.set_balance_to_default();
   },
 
   //   when_account_number_equal_123456789_should_be_return_balance_5000: function () {
@@ -35,5 +36,12 @@ module.exports = {
     if (balance + amount <= 5000) {
         console.log("Passed");
     }else console.log("Failed");
+  },
+
+  set_balance_to_default: function () {
+    console.log("set_balance_to_default:");
+    ServicesWallet.setNewBalanceByAccountNo(123456789, 5000);
+    ServicesWallet.setNewBalanceByAccountNo(234567123, 2);
+    console.log("OK");
   },
 }
