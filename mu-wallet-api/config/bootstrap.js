@@ -9,7 +9,17 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function(done) {
+module.exports.bootstrap = async function (done) {
+
+  sails.on('lifted', function () {
+    var TestScript = require('../api/services/TestScript.js');
+    TestScript.startTestScript();
+  });
+
+
+
+
+  // Start background process of SomeService.
 
   // By convention, this is a good place to set up fake data during development.
   //
