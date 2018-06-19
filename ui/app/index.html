@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,21 +15,64 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
 
+<body>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+  <div class="w3-sidebar w3-collapse w3-white w3-animate-left w3-large" style="z-index:3;width:300px;" id="mySidebar">
 
-  <div>Angular seed app: v<span app-version></span></div>
+    <div id="nav01" class="w3-bar-block">
+      <a class="w3-button w3-hover-teal w3-hide-large w3-large w3-right" href="javascript:void(0)" onclick="w3_close()">×</a>
+      <a class="w3-bar-item w3-button w3-border-bottom w3-large" href="#">
+        <img src="https://www.w3schools.com/images/w3schools.png" style="width:80%;">
+      </a>
+      <a class="w3-bar-item w3-button" href="#!/view1">Learn HTML</a>
+      <a class="w3-bar-item w3-button" href="#!/view2">Learn W3.CSS</a>
+    </div>
+  </div>
+
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+  <div class="w3-main" style="margin-left:300px;">
+
+    <div class="w3-top w3-theme w3-large w3-hide-large">
+      <i class="fa fa-bars w3-button w3-teal w3-xlarge" onclick="w3_open()"></i>
+    </div>
+
+    <header class="w3-container w3-theme w3-padding-64 w3-center">
+      <h1 class="w3-xxxlarge w3-padding-16">W3Schools.com</h1>
+    </header>
+
+    <div class="w3-container w3-padding-large w3-section w3-light-grey">
+      <div ng-view></div>
+    </div>
+
+    <footer class="w3-container w3-padding-large w3-light-grey w3-justify w3-opacity">
+      <p>
+        <div>MU-Wallet app: v
+          <span app-version></span>
+        </div>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -40,4 +86,5 @@
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 </body>
+
 </html>
