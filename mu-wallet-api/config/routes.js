@@ -28,6 +28,10 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
+  'post /api/wallet/getbalance':'Wallet.getBalance',
+  'post /api/wallet/transfer':'Wallet.transfer',
+
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
