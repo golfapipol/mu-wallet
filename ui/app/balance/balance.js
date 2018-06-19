@@ -10,7 +10,7 @@ angular.module('myApp.balance', ['ngRoute'])
   }])
 
   .controller('BalanceCtrl', ['$scope', 'Service', function ($scope, Service) {
-    $scope.account_number = '123456789';
+    $scope.account_number = 123456789;
     $scope.account_name = 'สมบูรณ์ เสียงระฆัง';
     $scope.currentTime = moment().format();
 
