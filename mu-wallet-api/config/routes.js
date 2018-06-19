@@ -29,6 +29,7 @@ module.exports.routes = {
   },
 
   'post /api/wallet/getbalance':'Wallet.getBalance',
+  'post /api/wallet/transfer':'Wallet.transfer',
 
 
   /***************************************************************************

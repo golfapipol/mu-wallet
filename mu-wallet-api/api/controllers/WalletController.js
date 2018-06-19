@@ -38,26 +38,15 @@ module.exports = {
 
   },
   transfer: function (req, res) {
-    var account_number = req.body.account_number;
-    console.log(account_number);
-    var client = MongoClient.connectAsync(mgServer)
-      .then(function (db) {
-        db.collection(mgUser).find({
-            "user_account_number": parseInt(account_number,10)
-          }).toArray()
-          .then(function (result) {
-            console.log(result);
-            // if (result.length > 0) {
-              return res.send(result);
-            // } else res.send(null);
-          })
-          .catch(function (err) {
-            console.log(err);
-          })
-      })
-      .catch(function (err) {
-        console.log(err);
-      })
+    var account_no_sender = req.body.account_no_sender;
+    var account_no_receiver = req.body.account_no_receiver;
+    var amount = +req.body.amount;
+
+    var validSender = ServicesWallet.validateAccountNo(+account_no_sender);
+    var validReceiver = ServicesWallet.validateAccountNo(+account_no_receiver);
+    Promise.all([validSender,validReceiver]).then(function(data){
+      console.log(data);
+    });
 
   },
 
