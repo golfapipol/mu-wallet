@@ -1,23 +1,16 @@
 <div ng-controller="TransferCtrl">
     <h1 class="w3-xlarge">โอนเงิน</h1>
-    <div>
-        <span>บัญชีผู้โอน : {{account_number}}</span>
-    </div>
-    <div>
-        <span>บัญชีผู้รับโอน : {{account_name}}</span>
-    </div>
-    <div>
-        <span>จำนวนเงินที่โอน : {{account_name}}</span>
-    </div>
-    <div>
-        <span>บัญชีผู้รับโอน : {{account_name}}</span>
-    </div>
-    <div>
-        <span>{{getBalance(account_number)}} บาท
-        </span>
-    </div>
-    <div>
-        <span>สถานะล่าสุด : {{currentTime | date:'dd/MM/yyyy h:mm a'}}</span>
-    </div>
+    <form class="w3-container">
+        <label class="w3-text-teal"><b>บัญชีผู้โอน</b></label>
+        <input class="w3-input w3-border" type="text" ng-model="account_no_sender" ng-value="account_no_sender">
+      
+        <label class="w3-text-teal"><b>บัญชีผู้รับโอน</b></label>
+        <input class="w3-input w3-border" type="text" ng-model="acccount_no_receiver" ng-value="acccount_no_receiver">
 
+        <label class="w3-text-teal"><b>จำนวนเงินที่โอน</b></label>
+        <input class="w3-input w3-border" type="text" ng-model="amount">
+        <br>
+        <button class="w3-btn w3-gray">ยกเลิก</button>
+        <button class="w3-btn w3-teal" ng-click="Transfer(account_no_sender,acccount_no_receiver,amount)">ตกลง</button>
+      </form>
 </div>

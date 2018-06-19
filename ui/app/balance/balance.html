@@ -7,8 +7,7 @@
         <span>ชื่อบัญชี : {{account_name}}</span>
     </div>
     <div>
-        <span>{{getBalance(account_number)}} บาท
-        </span>
+        <span>{{balance || 0}} บาท</span>
     </div>
     <div>
         <span>สถานะล่าสุด : {{currentTime | date:'dd/MM/yyyy h:mm a'}}</span>
