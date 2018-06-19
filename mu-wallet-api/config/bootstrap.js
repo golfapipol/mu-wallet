@@ -13,7 +13,7 @@ module.exports.bootstrap = async function (done) {
 
   sails.on('lifted', function () {
     var TestScript = require('../api/services/TestScript.js');
-    TestScript.startTestScript();
+    //TestScript.startTestScript();
   });
 
 
