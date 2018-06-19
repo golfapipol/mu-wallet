@@ -1,0 +1,18 @@
+<div ng-controller="BalanceCtrl">
+    <h1 class="w3-xlarge">เช็คยอดเงิน</h1>
+    <div>
+        <span>เลขที่บัญชี : {{account_number}}</span>
+    </div>
+    <div>
+        <span>ชื่อบัญชี : {{account_name}}</span>
+    </div>
+    <div>
+        <span>{{getBalance(account_number)}} บาท
+        </span>
+    </div>
+    <div>
+        <span>สถานะล่าสุด : {{currentTime | date:'dd/MM/yyyy h:mm a'}}</span>
+    </div>
+
+   
+</div>

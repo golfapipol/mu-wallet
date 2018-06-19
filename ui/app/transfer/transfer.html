@@ -1,0 +1,23 @@
+<div ng-controller="TransferCtrl">
+    <h1 class="w3-xlarge">โอนเงิน</h1>
+    <div>
+        <span>บัญชีผู้โอน : {{account_number}}</span>
+    </div>
+    <div>
+        <span>บัญชีผู้รับโอน : {{account_name}}</span>
+    </div>
+    <div>
+        <span>จำนวนเงินที่โอน : {{account_name}}</span>
+    </div>
+    <div>
+        <span>บัญชีผู้รับโอน : {{account_name}}</span>
+    </div>
+    <div>
+        <span>{{getBalance(account_number)}} บาท
+        </span>
+    </div>
+    <div>
+        <span>สถานะล่าสุด : {{currentTime | date:'dd/MM/yyyy h:mm a'}}</span>
+    </div>
+
+</div>
