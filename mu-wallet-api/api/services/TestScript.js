@@ -25,7 +25,7 @@ module.exports = {
     if (balance - amount >= 0) {
         console.log("Passed");
     }else console.log("Failed");
-    console.log(ServicesWallet.validateAccountNo(123456789));
+    //console.log(ServicesWallet.validateAccountNo(123456789));
   },
 
   when_receiver_balance_is_2_receive_amount_2000_should_be_success: function () {
